@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tags",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Typ": {
+      "type": "enumeration",
+      "enum": [
+        "city",
+        "countie",
+        "service"
+      ],
+      "default": "city",
+      "required": true
+    },
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 160
+    },
+    "Cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Lead": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content-parts.lead",
+      "required": true
+    },
+    "ContentParts": {
+      "type": "dynamiczone",
+      "components": [
+        "content-parts.txt"
+      ],
+      "required": true
+    },
+    "Views": {
+      "type": "component",
+      "repeatable": false,
+      "component": "stats.views"
+    },
+    "Articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article",
+      "inversedBy": "Tags"
+    },
+    "Client": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::client.client",
+      "inversedBy": "Counties"
+    }
+  }
+}
