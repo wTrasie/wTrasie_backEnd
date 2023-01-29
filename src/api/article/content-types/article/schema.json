@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Articles",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "article",
+        "service"
+      ],
+      "default": "article",
+      "required": true
+    },
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 160,
+      "minLength": 1
+    },
+    "Cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Lead": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content-parts.lead",
+      "required": true
+    },
+    "ContentParts": {
+      "type": "dynamiczone",
+      "components": [
+        "content-parts.txt",
+        "content-parts.media",
+        "content-parts.quote",
+        "content-parts.you-tube"
+      ],
+      "required": true
+    },
+    "Views": {
+      "type": "component",
+      "repeatable": false,
+      "component": "stats.views",
+      "required": true
+    },
+    "Tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "Articles"
+    }
+  }
+}
