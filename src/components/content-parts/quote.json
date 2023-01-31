@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "Quote": {
+    "quote": {
       "type": "text",
       "required": true,
       "unique": true

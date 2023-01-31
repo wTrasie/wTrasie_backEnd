@@ -4,7 +4,7 @@
   "info": {
     "singularName": "tag",
     "pluralName": "tags",
-    "displayName": "Tags",
+    "displayName": "tags",
     "description": ""
   },
   "options": {
@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Typ": {
+    "typ": {
       "type": "enumeration",
       "enum": [
         "city",
@@ -22,13 +22,13 @@
       "default": "city",
       "required": true
     },
-    "Title": {
+    "title": {
       "type": "string",
       "required": true,
       "unique": true,
       "maxLength": 160
     },
-    "Cover": {
+    "cover": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -36,35 +36,35 @@
         "images"
       ]
     },
-    "Lead": {
+    "lead": {
       "type": "component",
       "repeatable": false,
       "component": "content-parts.lead",
       "required": true
     },
-    "ContentParts": {
+    "contentparts": {
       "type": "dynamiczone",
       "components": [
         "content-parts.txt"
       ],
       "required": true
     },
-    "Views": {
+    "views": {
       "type": "component",
       "repeatable": false,
       "component": "stats.views"
     },
-    "Articles": {
+    "articles": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::article.article",
-      "inversedBy": "Tags"
+      "mappedBy": "tags"
     },
-    "Client": {
+    "client": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::client.client",
-      "inversedBy": "Counties"
+      "inversedBy": "counties"
     }
   }
 }

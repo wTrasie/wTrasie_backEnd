@@ -4,7 +4,7 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Articles",
+    "displayName": "articles",
     "description": ""
   },
   "options": {
@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Type": {
+    "type": {
       "type": "enumeration",
       "enum": [
         "article",
@@ -21,14 +21,14 @@
       "default": "article",
       "required": true
     },
-    "Title": {
+    "title": {
       "type": "string",
       "required": true,
       "unique": true,
       "maxLength": 160,
       "minLength": 1
     },
-    "Cover": {
+    "cover": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -36,13 +36,13 @@
         "images"
       ]
     },
-    "Lead": {
+    "lead": {
       "type": "component",
       "repeatable": false,
       "component": "content-parts.lead",
       "required": true
     },
-    "ContentParts": {
+    "contentparts": {
       "type": "dynamiczone",
       "components": [
         "content-parts.txt",
@@ -52,17 +52,17 @@
       ],
       "required": true
     },
-    "Views": {
+    "views": {
       "type": "component",
       "repeatable": false,
       "component": "stats.views",
       "required": true
     },
-    "Tags": {
+    "tags": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::tag.tag",
-      "mappedBy": "Articles"
+      "inversedBy": "articles"
     }
   }
 }
