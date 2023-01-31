@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "Lead": {
+    "lead": {
       "type": "text",
       "required": true,
       "unique": true,

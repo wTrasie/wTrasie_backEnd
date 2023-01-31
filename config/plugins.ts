@@ -37,4 +37,37 @@ module.exports = ({env}) => ({
       },
     },
   },
+  "fuzzy-search": {
+    enabled: true,
+    config: {
+      contentTypes: [
+        {
+          uid: "api::article.article",
+          modelName: "news",
+          fuzzysortOptions: {
+            threshold: -600,
+            limit: 5,
+            keys: [
+              {
+                name: "title",
+              },
+            ],
+          },
+        },
+        {
+          uid: "api::tag.tag",
+          modelName: "news",
+          fuzzysortOptions: {
+            threshold: -600,
+            limit: 5,
+            keys: [
+              {
+                name: "title",
+              },
+            ],
+          },
+        },
+      ],
+    },
+  },
 });
