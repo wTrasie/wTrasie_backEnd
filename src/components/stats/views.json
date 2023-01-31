@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "Views": {
+    "views": {
       "type": "integer",
       "default": 1,
       "required": true
