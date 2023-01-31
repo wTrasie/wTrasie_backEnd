@@ -1,18 +1,18 @@
 {
   "collectionName": "components_content_parts_you_tubes",
   "info": {
-    "displayName": "Gallery",
+    "displayName": "gallery",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "Gallery": {
-      "allowedTypes": [
-        "images"
-      ],
+    "gallery": {
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

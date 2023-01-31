@@ -4,7 +4,7 @@
   "info": {
     "singularName": "client",
     "pluralName": "clients",
-    "displayName": "Clients",
+    "displayName": "clients",
     "description": ""
   },
   "options": {
@@ -12,26 +12,26 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Company": {
+    "company": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "Phone": {
+    "phone": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "Email": {
+    "email": {
       "type": "email",
       "required": true,
       "unique": true
     },
-    "Counties": {
+    "counties": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::tag.tag",
-      "mappedBy": "Client"
+      "mappedBy": "client"
     }
   }
 }

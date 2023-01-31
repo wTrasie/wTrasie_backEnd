@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "Txt": {
+    "txt": {
       "type": "richtext",
       "required": true
     }
