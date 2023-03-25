@@ -1,7 +1,8 @@
 {
   "collectionName": "components_others_pages_social_medias",
   "info": {
-    "displayName": "pagesSocialMedia"
+    "displayName": "pagesSocialMedia",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -19,7 +20,7 @@
     "url": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": false
     }
   }
 }
