@@ -1,0 +1,57 @@
+{
+  "collectionName": "components_others_adresses",
+  "info": {
+    "displayName": "adress",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "street": {
+      "type": "string",
+      "required": true
+    },
+    "numberStreet": {
+      "type": "string",
+      "required": true
+    },
+    "apartmentNumber": {
+      "type": "string"
+    },
+    "postCode": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tag.tag"
+    },
+    "voivodeship": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tag.tag"
+    },
+    "googleMaps": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content-parts.maps"
+    },
+    "phones": {
+      "type": "component",
+      "repeatable": true,
+      "component": "others.phone"
+    },
+    "emails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "others.email"
+    },
+    "typ": {
+      "type": "enumeration",
+      "enum": [
+        "primmary",
+        "secondary"
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_others_site_bar_filters",
+  "info": {
+    "displayName": "siteBarFilters"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "typ": {
+      "type": "enumeration",
+      "enum": [
+        "tags",
+        "articles",
+        "clients",
+        "users"
+      ],
+      "required": true,
+      "default": "tags"
+    }
+  }
+}

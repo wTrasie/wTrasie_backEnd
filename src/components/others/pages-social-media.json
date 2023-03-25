@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_others_pages_social_medias",
+  "info": {
+    "displayName": "pagesSocialMedia"
+  },
+  "options": {},
+  "attributes": {
+    "typ": {
+      "type": "enumeration",
+      "enum": [
+        "page",
+        "shop",
+        "facebook",
+        "twitter",
+        "youtube",
+        "tiktok"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

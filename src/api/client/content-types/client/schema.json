@@ -12,26 +12,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "company": {
-      "type": "string",
-      "required": true,
-      "unique": true
+    "branches": {
+      "type": "component",
+      "repeatable": true,
+      "component": "others.adress"
     },
-    "phone": {
-      "type": "string",
-      "required": true,
-      "unique": true
+    "companyData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "others.company-data"
     },
-    "email": {
-      "type": "email",
-      "required": true,
-      "unique": true
-    },
-    "counties": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::tag.tag",
-      "mappedBy": "client"
+    "pagesAndSocialMedia": {
+      "type": "component",
+      "repeatable": true,
+      "component": "others.pages-social-media"
     }
   }
 }
