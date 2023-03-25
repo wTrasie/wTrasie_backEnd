@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "settings",
+  "info": {
+    "singularName": "setting",
+    "pluralName": "settings",
+    "displayName": "setting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "socialMedia": {
+      "type": "component",
+      "repeatable": true,
+      "component": "others.pages-social-media",
+      "required": true
+    },
+    "settingsPages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "others.setting-page",
+      "required": true
+    },
+    "footerColumnLinks": {
+      "type": "dynamiczone",
+      "components": [
+        "others.links-list"
+      ],
+      "required": true
+    }
+  }
+}

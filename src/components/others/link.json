@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_others_links",
+  "info": {
+    "displayName": "link"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_blank",
+        "_self",
+        "_parent",
+        "_top"
+      ]
+    },
+    "rel": {
+      "type": "enumeration",
+      "enum": [
+        "alternate",
+        "author",
+        "bookmark",
+        "canonical",
+        "dns-prefetch",
+        "external",
+        "help",
+        "icon",
+        "license",
+        "manifest",
+        "me",
+        "modulepreload",
+        "next",
+        "nofollow",
+        "noopener",
+        "noreferrer",
+        "opener",
+        "pingback",
+        "preconnect",
+        "prefetch",
+        "preload",
+        "prerender",
+        "prev",
+        "search",
+        "stylesheet",
+        "tag"
+      ]
+    }
+  }
+}

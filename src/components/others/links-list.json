@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_others_links_lists",
+  "info": {
+    "displayName": "LinksList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "others.link",
+      "required": true
+    }
+  }
+}
