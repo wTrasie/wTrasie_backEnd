@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_others_company_data",
+  "info": {
+    "displayName": "companyData",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "companyName": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "nip": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "regon": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "krs": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "typ": {
+      "type": "enumeration",
+      "enum": [
+        "dzialalnosc gospodarcza",
+        "spolka cywilna",
+        "spolka z ograniczona odpowiedzialnoscia",
+        "spolka akcyjna"
+      ]
+    }
+  }
+}
