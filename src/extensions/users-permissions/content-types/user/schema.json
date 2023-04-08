@@ -66,12 +66,6 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "article": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::article.article",
-      "inversedBy": "author"
-    },
     "avatar": {
       "allowedTypes": [
         "images"
@@ -79,6 +73,12 @@
       "type": "media",
       "multiple": false,
       "required": false
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "author"
     }
   }
 }
