@@ -1,8 +1,7 @@
 {
   "collectionName": "components_others_seos",
   "info": {
-    "displayName": "SEO",
-    "description": ""
+    "displayName": "SEO"
   },
   "options": {},
   "attributes": {
@@ -12,7 +11,7 @@
       "unique": true
     },
     "description": {
-      "type": "text",
+      "type": "richtext",
       "required": true,
       "unique": true
     }
