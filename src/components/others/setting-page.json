@@ -17,7 +17,7 @@
       "component": "others.seo",
       "required": true
     },
-    "filtre": {
+    "filter": {
       "type": "component",
       "repeatable": true,
       "component": "others.site-bar-filters",
