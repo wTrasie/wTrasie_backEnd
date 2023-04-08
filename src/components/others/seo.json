@@ -11,7 +11,9 @@
       "unique": true
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true,
+      "unique": true
     }
   }
 }
