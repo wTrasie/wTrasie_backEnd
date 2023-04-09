@@ -69,6 +69,12 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "articles"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "others.seo"
     }
   }
 }
