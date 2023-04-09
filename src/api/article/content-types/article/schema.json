@@ -47,8 +47,7 @@
       "components": [
         "content-parts.txt",
         "content-parts.media",
-        "content-parts.quote",
-        "content-parts.you-tube"
+        "content-parts.quote"
       ],
       "required": true
     },
