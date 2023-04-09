@@ -72,7 +72,7 @@
     },
     "seo": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "required": true,
       "component": "others.seo"
     }
