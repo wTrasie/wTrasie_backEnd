@@ -1,7 +1,8 @@
 {
   "collectionName": "components_others_site_bar_filters",
   "info": {
-    "displayName": "siteBarFilters"
+    "displayName": "siteBarFilters",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -23,6 +24,10 @@
       ],
       "required": true,
       "default": "tags"
+    },
+    "key": {
+      "type": "string",
+      "required": false
     }
   }
 }
