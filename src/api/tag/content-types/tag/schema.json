@@ -60,6 +60,12 @@
       "relation": "manyToMany",
       "target": "api::article.article",
       "mappedBy": "tags"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "others.seo"
     }
   }
 }
