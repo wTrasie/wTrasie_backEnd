@@ -1,18 +1,18 @@
 {
   "collectionName": "components_others_seos",
   "info": {
-    "displayName": "SEO"
+    "displayName": "SEO",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
+      "required": false,
       "unique": true
     },
     "description": {
-      "type": "richtext",
-      "required": true,
+      "type": "text",
       "unique": true
     }
   }
