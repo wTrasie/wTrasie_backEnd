@@ -8,8 +8,7 @@
   "attributes": {
     "txt": {
       "type": "richtext",
-      "required": true,
-      "minLength": 400
+      "required": true
     }
   }
 }
