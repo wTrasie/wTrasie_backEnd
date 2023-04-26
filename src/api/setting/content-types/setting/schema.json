@@ -24,10 +24,10 @@
       "component": "others.setting-page",
       "required": true
     },
-    "footerColumnLinks": {
+    "footer": {
       "type": "dynamiczone",
       "components": [
-        "others.links-list"
+        "footer.column"
       ],
       "required": true
     }
