@@ -47,7 +47,8 @@
       "components": [
         "content-parts.txt",
         "content-parts.media",
-        "content-parts.quote"
+        "content-parts.quote",
+        "content-parts.youtube"
       ],
       "required": true
     },
