@@ -9,7 +9,7 @@
     "phone": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "typ": {
       "type": "enumeration",
