@@ -21,7 +21,7 @@
       "type": "string",
       "required": true
     },
-    "city": {
+    "shortname": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::tag.tag"
