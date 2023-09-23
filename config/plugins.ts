@@ -37,37 +37,12 @@ module.exports = ({env}) => ({
       },
     },
   },
-  "fuzzy-search": {
-    enabled: true,
+  meilisearch: {
     config: {
-      contentTypes: [
-        {
-          uid: "api::article.article",
-          modelName: "news",
-          fuzzysortOptions: {
-            threshold: -600,
-            limit: 5,
-            keys: [
-              {
-                name: "title",
-              },
-            ],
-          },
-        },
-        {
-          uid: "api::tag.tag",
-          modelName: "news",
-          fuzzysortOptions: {
-            threshold: -600,
-            limit: 5,
-            keys: [
-              {
-                name: "title",
-              },
-            ],
-          },
-        },
-      ],
-    },
-  },
+      // Your meili host
+      host: "https://ms-9ae19e2142f7-5386.fra.meilisearch.io",
+      // Your master key or private key
+      apiKey: env("MEILI_SEARCH"),
+    }
+  }
 });
