@@ -64,9 +64,9 @@
       "target": "api::tag.tag",
       "inversedBy": "articles"
     },
-    "author": {
+    "authors": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
       "inversedBy": "articles"
     },
