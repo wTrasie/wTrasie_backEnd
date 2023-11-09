@@ -361,178 +361,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiArticleArticle extends Schema.CollectionType {
-  collectionName: 'articles';
-  info: {
-    singularName: 'article';
-    pluralName: 'articles';
-    displayName: 'articles';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    type: Attribute.Enumeration<['article', 'service']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'article'>;
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetMinMaxLength<{
-        minLength: 1;
-        maxLength: 160;
-      }>;
-    cover: Attribute.Media & Attribute.Required;
-    lead: Attribute.Component<'content-parts.lead'> & Attribute.Required;
-    contentparts: Attribute.DynamicZone<
-      [
-        'content-parts.txt',
-        'content-parts.media',
-        'content-parts.quote',
-        'content-parts.youtube'
-      ]
-    > &
-      Attribute.Required;
-    views: Attribute.Component<'stats.views'> & Attribute.Required;
-    tags: Attribute.Relation<
-      'api::article.article',
-      'manyToMany',
-      'api::tag.tag'
-    >;
-    authors: Attribute.Relation<
-      'api::article.article',
-      'manyToMany',
-      'plugin::users-permissions.user'
-    >;
-    seo: Attribute.Component<'others.seo'> & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::article.article',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::article.article',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiClientClient extends Schema.CollectionType {
-  collectionName: 'clients';
-  info: {
-    singularName: 'client';
-    pluralName: 'clients';
-    displayName: 'clients';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    branches: Attribute.Component<'others.adress', true>;
-    companyData: Attribute.Component<'others.company-data'>;
-    pagesAndSocialMedia: Attribute.Component<'others.pages-social-media', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::client.client',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::client.client',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiSettingSetting extends Schema.SingleType {
-  collectionName: 'settings';
-  info: {
-    singularName: 'setting';
-    pluralName: 'settings';
-    displayName: 'setting';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    socialMedia: Attribute.Component<'others.pages-social-media', true> &
-      Attribute.Required;
-    settingsPages: Attribute.Component<'others.setting-page', true> &
-      Attribute.Required;
-    footer: Attribute.DynamicZone<['footer.column']> & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::setting.setting',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::setting.setting',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiTagTag extends Schema.CollectionType {
-  collectionName: 'tags';
-  info: {
-    singularName: 'tag';
-    pluralName: 'tags';
-    displayName: 'tags';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    typ: Attribute.Enumeration<['other', 'city', 'countie', 'service']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'city'>;
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
-    cover: Attribute.Media & Attribute.Required;
-    lead: Attribute.Component<'content-parts.lead'> & Attribute.Required;
-    contentparts: Attribute.DynamicZone<['content-parts.txt']> &
-      Attribute.Required;
-    views: Attribute.Component<'stats.views'>;
-    articles: Attribute.Relation<
-      'api::tag.tag',
-      'manyToMany',
-      'api::article.article'
-    >;
-    seo: Attribute.Component<'others.seo'> & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -854,6 +682,214 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiArticleArticle extends Schema.CollectionType {
+  collectionName: 'articles';
+  info: {
+    singularName: 'article';
+    pluralName: 'articles';
+    displayName: 'articles';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    type: Attribute.Enumeration<['article', 'service']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'article'>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMaxLength<{
+        minLength: 1;
+        maxLength: 160;
+      }>;
+    cover: Attribute.Media & Attribute.Required;
+    lead: Attribute.Component<'content-parts.lead'> & Attribute.Required;
+    contentparts: Attribute.DynamicZone<
+      [
+        'content-parts.txt',
+        'content-parts.media',
+        'content-parts.quote',
+        'content-parts.youtube'
+      ]
+    > &
+      Attribute.Required;
+    views: Attribute.Component<'stats.views'> & Attribute.Required;
+    tags: Attribute.Relation<
+      'api::article.article',
+      'manyToMany',
+      'api::tag.tag'
+    >;
+    authors: Attribute.Relation<
+      'api::article.article',
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
+    seo: Attribute.Component<'others.seo'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiClientClient extends Schema.CollectionType {
+  collectionName: 'clients';
+  info: {
+    singularName: 'client';
+    pluralName: 'clients';
+    displayName: 'clients';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    branches: Attribute.Component<'others.adress', true>;
+    companyData: Attribute.Component<'others.company-data'>;
+    pagesAndSocialMedia: Attribute.Component<'others.pages-social-media', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::client.client',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::client.client',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCustomerMessageCustomerMessage
+  extends Schema.CollectionType {
+  collectionName: 'customer_messages';
+  info: {
+    singularName: 'customer-message';
+    pluralName: 'customer-messages';
+    displayName: 'customer-message';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Attribute.Email & Attribute.Required;
+    type: Attribute.Enumeration<['contact', 'feedback']>;
+    status: Attribute.Enumeration<['new', 'replied', 'unanswered', 'delete']>;
+    rating: Attribute.Enumeration<['best', 'normal', 'wrong']>;
+    message: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::customer-message.customer-message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::customer-message.customer-message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSettingSetting extends Schema.SingleType {
+  collectionName: 'settings';
+  info: {
+    singularName: 'setting';
+    pluralName: 'settings';
+    displayName: 'setting';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    socialMedia: Attribute.Component<'others.pages-social-media', true> &
+      Attribute.Required;
+    settingsPages: Attribute.Component<'others.setting-page', true> &
+      Attribute.Required;
+    footer: Attribute.DynamicZone<['footer.column']> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::setting.setting',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::setting.setting',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTagTag extends Schema.CollectionType {
+  collectionName: 'tags';
+  info: {
+    singularName: 'tag';
+    pluralName: 'tags';
+    displayName: 'tags';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    typ: Attribute.Enumeration<['other', 'city', 'countie', 'service']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'city'>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    cover: Attribute.Media & Attribute.Required;
+    lead: Attribute.Component<'content-parts.lead'> & Attribute.Required;
+    contentparts: Attribute.DynamicZone<['content-parts.txt']> &
+      Attribute.Required;
+    views: Attribute.Component<'stats.views'>;
+    articles: Attribute.Relation<
+      'api::tag.tag',
+      'manyToMany',
+      'api::article.article'
+    >;
+    seo: Attribute.Component<'others.seo'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
@@ -864,16 +900,17 @@ declare module '@strapi/strapi' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::article.article': ApiArticleArticle;
-      'api::client.client': ApiClientClient;
-      'api::setting.setting': ApiSettingSetting;
-      'api::tag.tag': ApiTagTag;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::article.article': ApiArticleArticle;
+      'api::client.client': ApiClientClient;
+      'api::customer-message.customer-message': ApiCustomerMessageCustomerMessage;
+      'api::setting.setting': ApiSettingSetting;
+      'api::tag.tag': ApiTagTag;
     }
   }
 }
